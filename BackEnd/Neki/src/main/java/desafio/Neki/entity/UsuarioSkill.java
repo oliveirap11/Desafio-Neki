@@ -18,14 +18,14 @@ public class UsuarioSkill {
   private Skill skill;
 
   @Column(nullable = false)
-  private int nivel;
+  private int level;
   
   public UsuarioSkill() {}
 
-  public UsuarioSkill(Usuario usuario, Skill skill, int nivel) {
+  public UsuarioSkill(Usuario usuario, Skill skill, int level) {
     this.usuario = usuario;
     this.skill = skill;
-    this.nivel = nivel;
+    this.level = level;
   }
   
   public Long getId() {
@@ -52,12 +52,12 @@ public class UsuarioSkill {
     this.skill = skill;
   }
 
-  public int getNivel() {
-    return nivel;
+  public int getLevel() {
+    return level;
   }
 
-  public void setNivel(int nivel) {
-    this.nivel = nivel;
+  public void setLevel(int level) {
+    this.level = level;
   }
 
 }
