@@ -3,6 +3,7 @@ package desafio.Neki.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -24,6 +25,7 @@ public class Usuario {
   private String senha;
 
   @Column(name = "data_cadastro", nullable = false)
+  @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
   private LocalDateTime dataCadastro;
 
   @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -36,7 +38,16 @@ public class Usuario {
     this.nome = nome;
     this.email = email;
     this.senha = senha;
-    this.dataCadastro = LocalDateTime.now();
+    // Trunca os nanossegundos, mantendo apenas segundos
+    this.dataCadastro = LocalDateTime.now().withNano(0);
+  }
+  
+  @PrePersist
+  public void prePersist() {
+    if (this.dataCadastro == null) {
+      // Trunca os nanossegundos, mantendo apenas segundos
+      this.dataCadastro = LocalDateTime.now().withNano(0);
+    }
   }
   
   public Long getId() {
