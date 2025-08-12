@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+*/node_modules/
+**/node_modules/
+
+# Mobile specific
+Mobile/neki-mobile/node_modules/
+Mobile/neki-mobile/.expo/
+Mobile/neki-mobile/dist/
+Mobile/neki-mobile/.expo-shared/
+
+# Frontend specific
+Frontend/desafio-neki/node_modules/
+Frontend/desafio-neki/dist/
+Frontend/desafio-neki/build/
+
+# Backend specific
+BackEnd/Neki/target/
+BackEnd/Neki/.mvn/
+BackEnd/h2/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
