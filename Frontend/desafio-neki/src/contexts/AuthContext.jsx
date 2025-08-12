@@ -21,15 +21,13 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await api.post('/api/auth/login', {
+      const response = await api.post('/auth/login', {
         email,
         senha: password
       });
-      console.log('Login response:', response.data);
-      // Backend retorna: { token, id, nome, email }
-      const { token, id, nome, email } = response.data;
-      const userData = { id, nome, email };
-      localStorage.setItem('token', token);
+      const data = response.data;
+      const userData = { id: data.id, nome: data.nome, email: data.email};
+      localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(userData));
       setUser(userData);
       return { success: true };
