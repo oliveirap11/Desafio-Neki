@@ -8,8 +8,6 @@ import desafio.Neki.entity.Usuario;
 import desafio.Neki.exception.ApiException;
 import desafio.Neki.repository.UsuarioRepository;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -74,11 +72,6 @@ public class AuthService {
             usuario.getNome(), 
             usuario.getEmail()
         );
-    }
-    
-    // Buscar todos os usuários
-    public List<Usuario> findAll() {
-        return usuarioRepository.findAll();
     }
     
 }
