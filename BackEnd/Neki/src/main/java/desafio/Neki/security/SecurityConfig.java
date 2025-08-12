@@ -31,6 +31,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()  // Login e cadastro públicos
                 .requestMatchers("/h2-console/**").permitAll() // Console H2 público
+                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**", "/webjars/**").permitAll() // Swagger UI público
                 .anyRequest().authenticated()
             )
             
