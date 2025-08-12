@@ -21,20 +21,17 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await api.post('/auth/login', {
+      const response = await api.post('/api/auth/login', {
         email,
         senha: password
       });
-      
-      const { token, user: userData } = response.data;
-      
-      // Armazenar no localStorage
+      console.log('Login response:', response.data);
+      // Backend retorna: { token, id, nome, email }
+      const { token, id, nome, email } = response.data;
+      const userData = { id, nome, email };
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(userData));
-      
-      // Atualizar estado
       setUser(userData);
-      
       return { success: true };
     } catch (error) {
       console.error('Erro no login:', error);

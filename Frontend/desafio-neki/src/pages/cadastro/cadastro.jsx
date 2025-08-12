@@ -29,26 +29,25 @@ export function Cadastro() {
     setIsLoading(true);
     setApiError('');
     setSuccessMessage('');
-    
     try {
       // Remover confirmPassword antes de enviar para API
-      const { confirmPassword, ...userData } = data;
-      
-      console.log('Dados para cadastro:', userData);
-      
-      // Simular chamada da API
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      setSuccessMessage('Cadastro realizado com sucesso!');
-      
-      // Redirecionar para login após 2 segundos
+      const { confirmPassword, name, ...userData } = data;
+      // Backend espera nome, email, senha, confirmarSenha
+      const payload = {
+        nome: name,
+        email: userData.email,
+        senha: userData.password,
+        confirmarSenha: confirmPassword
+      };
+      const response = await import('../../api/api').then(({ default: api }) =>
+        api.post('/auth/cadastro', payload)
+      );
+      setSuccessMessage(response.data.message || 'Cadastro realizado com sucesso!');
       setTimeout(() => {
         navigate('/');
       }, 2000);
-      
     } catch (error) {
-      console.error('Erro no cadastro:', error);
-      setApiError('Erro ao realizar cadastro. Tente novamente.');
+      setApiError(error.response?.data?.message || 'Erro ao realizar cadastro. Tente novamente.');
     } finally {
       setIsLoading(false);
     }
