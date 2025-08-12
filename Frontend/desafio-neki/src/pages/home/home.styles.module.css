@@ -1,3 +1,90 @@
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.skillImg {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+}
+.skillInfo {
+  flex: 1;
+  min-width: 0;
+}
+.skillNome {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1f2937;
+  word-break: break-word;
+}
+.skillDesc {
+  color: #6b7280;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+.skillLevelBox {
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.skillLevelLabel {
+  font-weight: 500;
+}
+.skillLevelInput {
+  width: 48px;
+  padding: 2px;
+}
+
+@media (max-width: 768px) {
+  .skillItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .skillImg {
+    width: 40px;
+    height: 40px;
+  }
+  .skillLevelBox {
+    min-width: 0;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
+  .skillItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.7rem;
+  }
+  .skillImg {
+    width: 32px;
+    height: 32px;
+  }
+  .skillNome {
+    font-size: 0.95rem;
+  }
+  .skillDesc {
+    font-size: 0.8rem;
+  }
+}
 .container {
   min-height: 100vh;
   background-color: #f8fafc;
