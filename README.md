@@ -94,24 +94,6 @@ O **Sistema de Gestão de Skills** é uma aplicação full-stack completa que pe
 🔹 Constraints e Relacionamentos
 ```
 
-## 📱 **Screenshots**
-
-<div align="center">
-
-### 📱 **Mobile App**
-
-| Login | Home | Skills |
-|-------|------|--------|
-| ![Login](https://via.placeholder.com/200x400/1a73e8/ffffff?text=Login+Screen) | ![Home](https://via.placeholder.com/200x400/34a853/ffffff?text=Home+Screen) | ![Skills](https://via.placeholder.com/200x400/ea4335/ffffff?text=Skills+CRUD) |
-
-### 🌐 **Web Application**
-
-| Dashboard | Skills Management | Add Skill |
-|-----------|-------------------|-----------|
-| ![Web Home](https://via.placeholder.com/300x200/1a73e8/ffffff?text=Web+Dashboard) | ![Web Skills](https://via.placeholder.com/300x200/34a853/ffffff?text=Skills+Management) | ![Add Skill](https://via.placeholder.com/300x200/ea4335/ffffff?text=Add+New+Skill) |
-
-</div>
-
 ## 🏗️ **Arquitetura do Sistema**
 
 ```mermaid
