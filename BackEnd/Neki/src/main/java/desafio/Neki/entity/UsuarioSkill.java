@@ -6,7 +6,8 @@ import jakarta.persistence.*;
 public class UsuarioSkill {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario_skill")
+  @SequenceGenerator(name = "seq_usuario_skill", sequenceName = "seq_usuario_skill", allocationSize = 1)
   private Long id;
 
   @ManyToOne

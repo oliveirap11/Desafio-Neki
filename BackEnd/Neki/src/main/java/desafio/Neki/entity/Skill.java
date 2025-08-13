@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Skill {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_skill")
+  @SequenceGenerator(name = "seq_skill", sequenceName = "seq_skill", allocationSize = 1)
   private Long id;
 
   @Column(nullable = false)
