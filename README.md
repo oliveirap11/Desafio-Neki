@@ -12,7 +12,7 @@
 
 **Plataforma completa para gerenciamento de habilidades técnicas dos usuários**
 
-[🎯 Funcionalidades](#-funcionalidades) • [🛠️ Tecnologias](#️-tecnologias) • [📱 Screenshots](#-screenshots) • [🚀 Como Executar](#-como-executar) • [📋 API](#-documentação-da-api)
+[🎯 Funcionalidades](#-funcionalidades) • [🛠️ Tecnologias](#️-tecnologias) • [🚀 Como Executar](#-como-executar) • [📋 API](#-documentação-da-api)
 
 </div>
 
